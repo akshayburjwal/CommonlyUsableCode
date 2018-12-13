@@ -1,0 +1,19 @@
+<form #loginForm="ngForm" class="col s12 white" (ngSubmit) = "submitForm(userName.value,password.value)">
+  <div class="row">
+    <div class="input-field col s12">
+      Username:
+      <input type="text" #userName ngModel name="userName" placeholder="userName" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      Password:
+      <input type="password" #password ngModel name="password" placeholder="password" required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button [disabled]="!loginForm.valid" class="btn-large btn-submit" type="submit">Login</button>
+    </div>
+  </div>
+</form>

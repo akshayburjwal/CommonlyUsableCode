@@ -1,0 +1,27 @@
+<nav>
+  <div class="nav-wrapper">
+      Client List
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a (click)="Logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row" *ngIf="clientList">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-content" *ngFor="let user of clientList">
+        <span>Username :{{user.userName}}</span>
+        <br>
+        <span  *ngIf="userService.matchRoles(['admin'])">Email : {{user.email}}</span>
+        <br>
+        <span>Full Name : {{user.firstName}} {{user.lastName}}</span>
+        <br>
+        <!--<span>Logged On : {{user.loggedOn}}</span>-->
+      </div>
+    </div>
+  </div>
+</div>
+<app-operation></app-operation>
+
